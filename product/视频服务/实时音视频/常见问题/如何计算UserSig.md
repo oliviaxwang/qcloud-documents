@@ -13,7 +13,7 @@ usersig = hmacsha256(secretkey, (userid + sdkappid + currtime + expire +
 ```
 >?
 >- `currtime` 为当前系统的时间，`expire` 为签名过期的时间。
->- 上述原理图仅做 UserSig 计算原理说明，如需了解具体的 UserSig 拼接代码实现方式，请参见 [客户端计算 UserSig](#Client) 和 [服务端计算 UserSig](#Server)。
+>- 上述原理图仅做 UserSig 计算原理说明，如需了解具体的 UserSig 拼接代码实现方式，请参见 [客户端计算 UserSig](#client) 和 [服务端计算 UserSig](#console)。
 
 [](id:Key)
 ## 调试跑通阶段如何计算 UserSig？
@@ -39,35 +39,35 @@ usersig = hmacsha256(secretkey, (userid + sdkappid + currtime + expire +
 <tbody><tr>
 <td>iOS</td>
 <td><a href="https://github.com/LiteAVSDK/TRTC_iOS/tree/main/TRTC-API-Example-OC/Debug/GenerateTestUserSig.h">Github</a></td>
-<td>iOS/TRTC-API-Example-OC/Debug/GenerateTestUserSig.h</td>
+<td>TRTC-API-Example-OC/Debug/GenerateTestUserSig.h</td>
 </tr><tr>
 <td>Mac</td>
 <td><a href="https://github.com/LiteAVSDK/TRTC_Mac/tree/main/OCDemo/TRTCDemo/TRTC/GenerateTestUserSig.h">Github</a></td>
-<td>Mac/OCDemo/TRTCDemo/TRTC/GenerateTestUserSig.h</td>
+<td>OCDemo/TRTCDemo/TRTC/GenerateTestUserSig.h</td>
 </tr><tr>
 <td>Android</td>
 <td><a href="https://github.com/LiteAVSDK/TRTC_Android/tree/main/TRTC-API-Example/Debug/src/main/java/com/tencent/trtc/debug/GenerateTestUserSig.java">Github</a></td>
-<td>Android/TRTC-API-Example/Debug/src/main/java/com/tencent/trtc/debug/GenerateTestUserSig.java</td>
+<td>TRTC-API-Example/Debug/src/main/java/com/tencent/trtc/debug/GenerateTestUserSig.java</td>
 </tr><tr>
 <td>Windows（C++）</td>
-<td><a href="https://github.com/LiteAVSDK/TRTC_Windows/tree/main/DuilibDemo/GenerateTestUserSig.h">Github</a></td>
-<td>Windows/DuilibDemo/GenerateTestUserSig.h</td>
+<td><a href="https://github.com/LiteAVSDK/TRTC_Windows/blob/main/TRTC-API-Example-C%2B%2B/TRTC-API-Example-Qt/src/Util/defs.h">Github</a></td>
+<td>TRTC-API-Example-C++/TRTC-API-Example-Qt/src/Util/defs.h</td>
 </tr><tr>
 <td>Windows（C#）</td>
-<td><a href="https://github.com/LiteAVSDK/TRTC_Windows/tree/main/CSharpDemo/GenerateTestUserSig.cs">Github</a></td>
-<td>Windows/CSharpDemo/GenerateTestUserSig.cs</td>
+<td><a href="https://github.com/LiteAVSDK/TRTC_Windows/blob/main/TRTC-API-Example-CSharp/TRTC-API-Example-CSharp/GenerateTestUserSig.cs">Github</a></td>
+<td>TRTC-API-Example-CSharp/TRTC-API-Example-CSharp/GenerateTestUserSig.cs</td>
 </tr><tr>
 <td>Web</td>
 <td><a href="https://github.com/LiteAVSDK/TRTC_Web/blob/main/base-js/js/debug/GenerateTestUserSig.js">Github</a></td>
-<td>/base-js/js/debug/GenerateTestUserSig.js</td>
+<td>base-js/js/debug/GenerateTestUserSig.js</td>
 </tr><tr>
 <td>微信小程序</td>
 <td><a href="https://github.com/LiteAVSDK/Live_WXMini/tree/main/TRTCSimpleDemo/debug/GenerateTestUserSig.js">Github</a></td>
-<td>WXMini/TRTCSimpleDemo/debug/GenerateTestUserSig.js</td>
+<td>TRTCSimpleDemo/debug/GenerateTestUserSig.js </td>
 </tr><tr>
 <td>Flutter</td>
-<td><a href="https://github.com/c1avie/trtc_demo/blob/master/lib/debug/GenerateTestUserSig.dart">Github</a></td>
-<td>/lib/debug/GenerateTestUserSig.dart</td>
+<td><a href="https://github.com/LiteAVSDK/TRTC_Flutter/blob/master/TRTC-API-Example/lib/Debug/GenerateTestUserSig.dart">Github</a></td>
+<td>TRTC-API-Example/lib/Debug/GenerateTestUserSig.dart</td>
 </tr>
 </tbody></table>
 

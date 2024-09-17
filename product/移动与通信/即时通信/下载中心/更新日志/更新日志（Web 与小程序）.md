@@ -1,3 +1,158 @@
+### 2.23.0 @2022.9.16
+
+**新增**
+
+- SDK 支持海外环境。
+- [getTotalUnreadMessageCount](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#getTotalUnreadMessageCount)，支持获取会话未读总数。
+- [TOTAL_UNREAD_MESSAGE_COUNT_UPDATED](https://web.sdk.qcloud.com/im/doc/zh-cn/module-EVENT.html#.TOTAL_UNREAD_MESSAGE_COUNT_UPDATED)，接入侧监听此事件，可获取会话未读总数变更的通知。
+- [markGroupMemberList](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#markGroupMemberList)，支持标记直播群群成员（需开通旗舰版）。
+- 群成员被踢出群，或者群被解散，SDK 同步更新此群会话所在的会话分组。
+- 支持小程序独立分包。
+- Web 多实例登录场景下，断网重连后 SDK 主动恢复最近联系人的消息记录，保障消息可靠性。
+
+**修复**
+
+- Web 多实例登录场景下可能出现的会话 lastMessage 撤回状态不同步问题。
+- 同步最近联系人时会话置顶问题。
+
+### 2.22.0 @2022.8.18
+
+**新增**
+
+- 支持 uni-app 打包到 native app 使用离线推送，请参见 [registerPlugin](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#registerPlugin)。
+- 支持获取直播群在线成员列表，请参见 [getGroupMemberList](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#getGroupMemberList) （需开通旗舰版）。
+- 支持直播群封禁成员，请参见 [deleteGroupMember](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#deleteGroupMember)（需开通旗舰版）。
+- [setConversationCustomData](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#setConversationCustomData) 设置会话自定义数据。
+- [markConversation](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#markConversation) 标记会话（需开通旗舰版）。
+- [getConversationGroupList](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#getConversationGroupList) 获取会话分组列表（需开通旗舰版）。
+- [createConversationGroup](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#createConversationGroup) 创建会话分组（需开通旗舰版）。
+- [deleteConversationGroup](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#deleteConversationGroup) 删除会话分组（需开通旗舰版）。
+- [renameConversationGroup](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#renameConversationGroup) 重命名会话分组（需开通旗舰版）。
+- [addConversationsToGroup](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#addConversationsToGroup) 添加会话到一个会话分组（需开通旗舰版）。
+- [deleteConversationsFromGroup](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#deleteConversationsFromGroup) 从一个会话分组中删除会话（需开通旗舰版）。
+
+**修复**
+
+- 收到话题消息被撤回的通知后，话题未读数未更新的问题。
+
+### 2.21.2 @2022.8.8
+
+**新增**
+
+- 支持 Web 端创建和发送语音消息。
+- [createMergerMessage](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#createMergerMessage) 创建合并消息，被合并的消息新增 ID 字段。
+
+### 2.21.1 @2022.8.3
+
+**修复**
+
+[resendMessage](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#resendMessage) 可能导致的消息重复问题。
+
+### 2.21.0 @2022.7.28
+
+**新增**
+- [setSelfStatus](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#setSelfStatus)，设置自己的自定义状态。
+- [getUserStatus](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#getUserStatus)，查询用户状态。
+- [subscribeUserStatus](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#subscribeUserStatus)，订阅用户状态。
+- [unsubscribeUserStatus](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#unsubscribeUserStatus)，取消订阅用户状态。
+- [setMessageRemindType](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#setMessageRemindType) 支持群消息和话题消息的免打扰设置多端、多实例同步。
+- [createFileMessage](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#createFileMessage) 支持手机端微信小程序 和 QQ 小程序发文件消息。
+- [modifyMessage](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#modifyMessage) 支持变更所有类型消息的 cloudCustomData。
+- [Message](https://web.sdk.qcloud.com/im/doc/zh-cn/Message.html) 新增字段 isBroadcastMessage，支持直播群广播消息。
+- 支持加群选项多终端、多实例同步。
+- 支持普通社群和话题@全员以及话题 lastMessage。
+
+
+**变更**
+- 浏览器支持 webworker 时国际站和私有化环境默认开启 webworker。
+
+**修复**
+
+- 收到不更新会话 lastMessage 的消息后，lastMessage.payload 被置为 undefined 的问题。
+- 在线消息引起的群组消息补偿未启动问题。
+- 频繁退群、加群后拉群漫游消息异常。
+- 分页拉取群组列表滞后导致拉取群会话漫游消息为空数组的问题。
+- 话题已知问题。
+
+
+### 2.20.1 @2022.6.27
+
+**变更**
+
+- 退出/被踢出非直播群，或非直播群被解散，只删除群组记录，不删除对应的群会话，体验对齐 native。
+- [deleteMessage](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#deleteMessage) 不支持删除群系统通知，并给出具体错误信息。
+- 私有化部署的富媒体消息支持 HTTP 协议。
+
+**修复**
+
+- 小程序前后台切换等场景下偶现群会话丢失问题。
+- C2C 会话 lastMessage 被异常更新问题。
+
+### 2.20.0 @2022.6.9
+
+**新增**
+
+- [modifyMessage](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#modifyMessage)，支持消息变更。
+- [getMessageListHopping](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#getMessageListHopping)，支持根据指定的消息 sequence 或消息时间拉取会话的消息列表。
+- 支持针对单条或多条 C2C 消息发送已读回执（需开通旗舰版）。
+- C2C 会话 lastMessage 新增字段 isPeerRead，用于标识对端是否已读。
+- 支持群提示消息不计入会话未读。
+- 新增类型 [TIM.TYPES.KICKED_OUT_REST_API](https://web.sdk.qcloud.com/im/doc/zh-cn/module-TYPES.html#.KICKED_OUT_REST_API)，支持 REST API [kick](https://cloud.tencent.com/document/product/269/3853)。
+
+**变更**
+
+完善并优化 [getMessageList](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#getMessageList) 拉漫游消息的体验。
+
+**修复**
+
+- 传参问题导致的 [deleteMessage](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#deleteMessage) 成功后会话列表未更新。
+- 部分机型真机调试小程序时遇到的 `Cannot add property markTimeline, Object is not extensible` 问题。
+
+
+### 2.19.1 @2022.5.7
+
+**新增**
+- 支持 [社群（Community）](https://cloud.tencent.com/document/product/269/1502#.E7.BE.A4.E7.BB.84.E7.B1.BB.E5.9E.8B.E4.BB.8B.E7.BB.8D)下创建话题（Topic），支持互动性更强的场景。
+- [getJoinedCommunityList](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#getJoinedCommunityList) 获取支持话题的社群列表。
+- [createTopicInCommunity](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#createTopicInCommunity) 创建话题。
+- [deleteTopicFromCommunity](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#deleteTopicFromCommunity) 删除话题。
+- [updateTopicProfile](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#updateTopicProfile) 设置话题资料。
+- [getTopicList](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#getTopicList) 获取话题列表。
+- [Topic](https://web.sdk.qcloud.com/im/doc/zh-cn/Topic.html) 社群话题对象，用于描述话题具有的属性，如名称、公告、简介、未读数等信息。
+- 事件 [TIM.EVENT.TOPIC_CREATED](https://web.sdk.qcloud.com/im/doc/zh-cn/module-EVENT.html#.TOPIC_CREATED) 创建话题时触发。
+- 事件 [TIM.EVENT.TOPIC_DELETED](https://web.sdk.qcloud.com/im/doc/zh-cn/module-EVENT.html#.TOPIC_DELETED) 删除话题时触发。
+- 事件 [TIM.EVENT.TOPIC_UPDATED](https://web.sdk.qcloud.com/im/doc/zh-cn/module-EVENT.html#.TOPIC_UPDATED) 话题资料更新时触发。
+
+### 2.18.2 @2022.4.22
+
+**变更**
+
+优化直播群使用体验。
+
+**修复**
+
+- 部分场景下统计不准确的问题。
+- 调用接口 [getGroupMessageReadMemberList](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#getGroupMessageReadMemberList) 返回结果不准确的问题。
+
+### 2.18.0 @2022.4.8
+
+**新增**
+
+- [sendMessageReadReceipt](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#sendMessageReadReceipt) 发送群消息已读回执。
+- [getMessageReadReceiptList](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#getMessageReadReceiptList) 拉取群消息已读回执列表。
+- [getGroupMessageReadMemberList](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#getGroupMessageReadMemberList) 拉取群消息已读（或未读）群成员列表。
+- [findMessage](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#findMessage) 根据 messageID 查询会话的本地消息。
+- 消息被撤回后，会话未读数的变更体验对齐 NativeIM。
+
+**变更**
+
+- [Message.ID](https://web.sdk.qcloud.com/im/doc/zh-cn/Message.html) 拼接规则为 `${senderTinyID}-${clientTime}-${random}`，与 NativeIM 消息的 ID 拼接规则一致。
+- SDK not ready 时提示具体原因，方便接入侧使用。
+
+**修复**
+
+踢出群成员后，其它群成员从 [CONVERSATION_LIST_UPDATED](https://web.sdk.qcloud.com/im/doc/zh-cn/module-EVENT.html#.CONVERSATION_LIST_UPDATED) 事件回调里面获取的 `Conversation.groupProfile.memberCount` 值未更新。
+
 ### 2.17.0 @2022.3.2
 
 **新增**

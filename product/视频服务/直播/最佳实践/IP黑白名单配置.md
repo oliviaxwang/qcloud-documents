@@ -30,7 +30,7 @@
 <li>暂不支持 IP v6</li></ul></td>
 </tr>
 </tbody></table>
-4.单击**保存**即可保存配置，配置需要一定时间才可生效。
+4. 单击**保存**即可保存配置，配置需要一定时间才可生效。
 ![](https://qcloudimg.tencent-cloud.cn/raw/aa7e017cfb6f01e9c7596c4d404e636a.png)
 
 [](id:change)
@@ -44,6 +44,5 @@
 ## 关闭 IP 黑白名单
 开启 IP 黑白名单后，若您需关闭此功能，具体操作如下：
 1.选择 [域名管理](https://console.cloud.tencent.com/live/domainmanage)，单击需关闭 IP 黑白名单配置的**播放域名**或右侧的**管理**，进入域名管理页。
-2.在**访问控制> IP 黑白名单配置**中，单击**编辑**进入 IP 黑白名单配置页。
-3.单击![img](https://main.qcloudimg.com/raw/e72f89a0deb6858428dc3e93ce7e7088.png)按钮，选择关闭 IP 黑白名单。
+2.在**访问控制> IP 黑白名单配置**中，单击![img](https://main.qcloudimg.com/raw/e72f89a0deb6858428dc3e93ce7e7088.png)按钮，选择关闭 IP 黑白名单。
 ![](https://qcloudimg.tencent-cloud.cn/raw/c47a203613d62dc339431e50d22438ad.png)
